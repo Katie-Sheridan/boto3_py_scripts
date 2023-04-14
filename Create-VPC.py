@@ -1,8 +1,9 @@
 # Creates a Vpc resource.:
 
-import boto3 
+import boto3
+vpc = boto3.client('vpc') 
 
-response = client.create_vpc(
+response = vpc.create_vpc(
     CidrBlock='string',
     AmazonProvidedIpv6CidrBlock=True|False,
     Ipv6Pool='string',
