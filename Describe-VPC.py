@@ -1,8 +1,9 @@
 #describe vpc
 
 import boto3
-vpc =  
-response = client.describe_vpcs(
+vpc = boto3.client('vpc') 
+
+response = vpc.describe_vpcs(
     Filters=[
         {
             'Name': 'string',
