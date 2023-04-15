@@ -1,7 +1,7 @@
 #create and ebs volume snapshot
 import boto3
 
-ec2 = boto3.resource('ec2')
+ebs = boto3.resource('ebs')
 snapshot = ec2.create_snapshot(
     Description='string',
     OutpostArn='string',
