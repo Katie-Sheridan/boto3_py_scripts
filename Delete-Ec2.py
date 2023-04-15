@@ -1,6 +1,7 @@
 import boto3
+ec2 = boto3.resource('ec2')
 
-response = client.terminate_instances(
+instance = ec2.stop_instance(
     InstanceIds=[
         'string',
     ],
