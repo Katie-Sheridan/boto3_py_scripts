@@ -5,13 +5,14 @@ sqs = boto3.client('sqs')
 
 # Create a SQS queue
 response = sqs.create_queue(
-    QueueName='SQS_QUEUE_NAME',
+    QueueName='Shipping-SQS',
     Attributes={
         'DelaySeconds': '60',
         'MessageRetentionPeriod': '86400'
     }
 )
 
-print(response['QueueUrl'])"""
-Your module description
-"""
+# Get URL for SQS queue
+response = sqs.get_queue_url(QueueName='Shipping-SQS')
+
+print(response['QueueUrl'])
